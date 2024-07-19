@@ -15,7 +15,7 @@ const ALCHEMY_URL = `https://polygon-amoy.g.alchemy.com/v2/${ALCHEMY_API_KEY}`;
 // Ethereum MAIN NET
 //const ALCHEMY_URL = `https://eth-mainnet.g.alchemy.com/v2/${ALCHEMY_API_KEY}`;
 
-const STUNT_WALLET_PRIVATE_KEY = process.env.STUNT_WALLET_PRIVATE_KEY;
+const TEST_WALLET_PRIVATE_KEY = process.env.TEST_WALLET_PRIVATE_KEY;
 const COINMARKETCAP_API_KEY = process.env.COINMARKETCAP_API_KEY;
 
 module.exports = {
@@ -42,25 +42,25 @@ module.exports = {
     },
     polygonAmoy: {
       url: ALCHEMY_URL,
-      accounts: [STUNT_WALLET_PRIVATE_KEY],
+      accounts: [TEST_WALLET_PRIVATE_KEY],
       gasPrice: 35000000000,
       chainId: 80001,
     },
     polygon: {
       url: ALCHEMY_URL,
-      accounts: [STUNT_WALLET_PRIVATE_KEY],
+      accounts: [TEST_WALLET_PRIVATE_KEY],
       gasPrice: 35000000000,
       chainId: 137,
     },
     sepolia: {
       url: ALCHEMY_URL,
-      accounts: [STUNT_WALLET_PRIVATE_KEY],
+      accounts: [TEST_WALLET_PRIVATE_KEY],
       gasPrice: 35000000000,
       chainId: 11155111,
     },
     ethereum: {
       url: ALCHEMY_URL,
-      accounts: [STUNT_WALLET_PRIVATE_KEY],
+      accounts: [TEST_WALLET_PRIVATE_KEY],
       gasPrice: 35000000000,
       chainId: 1,
     },

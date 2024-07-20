@@ -35,7 +35,7 @@ module.exports = {
     outputFile: "gas-report.txt",
     noColors: true,
   },
-  defaultNetwork: "hardhat", // hardhat for testing, change this for different networks
+  defaultNetwork: "polygonAmoy", // hardhat for testing, change this for different networks
   networks: {
     hardhat: {
       chainId: 31337,
@@ -44,7 +44,7 @@ module.exports = {
       url: ALCHEMY_URL,
       accounts: [TEST_WALLET_PRIVATE_KEY],
       gasPrice: 35000000000,
-      chainId: 80001,
+      chainId: 80002,
     },
     polygon: {
       url: ALCHEMY_URL,

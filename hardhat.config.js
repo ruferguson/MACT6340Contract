@@ -1,19 +1,20 @@
 require("@nomicfoundation/hardhat-toolbox");
+require("@nomicfoundation/hardhat-ethers");
 require("dotenv").config();
 
 const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY;
 const POLYGONSCAN_API_KEY = process.env.POLYGONSCAN_API_KEY;
 const ALCHEMY_API_KEY = process.env.ALCHEMY_API_KEY;
 
-// change these for different networks
+// Change these for different networks
 // Polygon Amoy TEST NET
-const ALCHEMY_URL = `https://polygon-amoy.g.alchemy.com/v2/${ALCHEMY_API_KEY}`;
+const ALCHEMY_URL_POLYGON_AMOY = `https://polygon-amoy.g.alchemy.com/v2/${ALCHEMY_API_KEY}`;
 // Polygon MAIN NET
-//const ALCHEMY_URL = `https://polygon-mainnet.g.alchemy.com/v2/${ALCHEMY_API_KEY}`;
+const ALCHEMY_URL_POLYGON_MAINNET = `https://polygon-mainnet.g.alchemy.com/v2/${ALCHEMY_API_KEY}`;
 // Ethereum Sepolia TEST NET
-// const ALCHEMY_URL = `https://eth-sepolia.g.alchemy.com/v2/${ALCHEMY_API_KEY}`;
+const ALCHEMY_URL_SEPOLIA = `https://eth-sepolia.g.alchemy.com/v2/${ALCHEMY_API_KEY}`;
 // Ethereum MAIN NET
-//const ALCHEMY_URL = `https://eth-mainnet.g.alchemy.com/v2/${ALCHEMY_API_KEY}`;
+const ALCHEMY_URL_MAINNET = `https://eth-mainnet.g.alchemy.com/v2/${ALCHEMY_API_KEY}`;
 
 const TEST_WALLET_PRIVATE_KEY = process.env.TEST_WALLET_PRIVATE_KEY;
 const COINMARKETCAP_API_KEY = process.env.COINMARKETCAP_API_KEY;
@@ -41,25 +42,25 @@ module.exports = {
       chainId: 31337,
     },
     polygonAmoy: {
-      url: ALCHEMY_URL,
+      url: ALCHEMY_URL_POLYGON_AMOY,
       accounts: [TEST_WALLET_PRIVATE_KEY],
       gasPrice: 35000000000,
       chainId: 80002,
     },
     polygon: {
-      url: ALCHEMY_URL,
+      url: ALCHEMY_URL_POLYGON_MAINNET,
       accounts: [TEST_WALLET_PRIVATE_KEY],
       gasPrice: 35000000000,
       chainId: 137,
     },
     sepolia: {
-      url: ALCHEMY_URL,
+      url: ALCHEMY_URL_SEPOLIA,
       accounts: [TEST_WALLET_PRIVATE_KEY],
       gasPrice: 35000000000,
       chainId: 11155111,
     },
     ethereum: {
-      url: ALCHEMY_URL,
+      url: ALCHEMY_URL_MAINNET,
       accounts: [TEST_WALLET_PRIVATE_KEY],
       gasPrice: 35000000000,
       chainId: 1,
